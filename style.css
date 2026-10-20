@@ -7375,96 +7375,6 @@ h2 span {
 }
 
 
-/* =========================================================
-   GALERIA INTERNA ASSIMÉTRICA
-========================================================= */
-
-.products-redesign
-.product-detail-gallery {
-    display: grid;
-
-    grid-template-columns:
-        repeat(12, 1fr);
-
-    grid-template-rows:
-        260px 230px;
-
-    gap: 17px;
-
-    margin-bottom: 45px;
-}
-
-
-.products-redesign
-.product-detail-image {
-    position: relative;
-
-    overflow: hidden;
-
-    border-radius: 25px;
-
-    background:
-        var(--green-light);
-}
-
-
-.products-redesign
-.product-detail-image:nth-child(1) {
-    grid-column:
-        1 / 7;
-
-    grid-row:
-        1 / 3;
-}
-
-
-.products-redesign
-.product-detail-image:nth-child(2) {
-    grid-column:
-        7 / 10;
-
-    grid-row:
-        1;
-}
-
-
-.products-redesign
-.product-detail-image:nth-child(3) {
-    grid-column:
-        10 / 13;
-
-    grid-row:
-        1;
-}
-
-
-.products-redesign
-.product-detail-image:nth-child(4) {
-    grid-column:
-        7 / 13;
-
-    grid-row:
-        2;
-}
-
-
-.products-redesign
-.product-detail-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    transition:
-        transform 0.5s ease;
-}
-
-
-.products-redesign
-.product-detail-image:hover img {
-    transform:
-        scale(1.035);
-}
 
 
 /* =========================================================
@@ -9115,8 +9025,6 @@ h2 span {
 .terere-featured-image {
     width: 100%;
 
-    aspect-ratio: 3 / 2;
-
     overflow: hidden;
 
     display: flex;
@@ -9292,33 +9200,6 @@ h2 span {
     box-shadow: 0 18px 36px rgba(23, 63, 39, 0.10);
 }
 
-.terere-flavor-image {
-    width: 100%;
-
-    aspect-ratio: 3 / 2;
-
-    overflow: hidden;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background:
-        linear-gradient(
-            145deg,
-            #e6ece5,
-            #d5dfd3
-        );
-}
-
-.terere-flavor-image img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: contain;
-}
 
 .terere-flavor-text {
     padding: 18px 18px 20px;
@@ -9448,4 +9329,2329 @@ h2 span {
         align-items: flex-start;
     }
 
+}
+
+
+/* =========================================================
+   IDENTIFICAÇÃO - ORGÂNICOS E TRADICIONAIS
+========================================================= */
+
+.product-type-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.product-type-tag {
+    padding: 7px 14px;
+    border: 1px solid var(--gold-light);
+    border-radius: 100px;
+    color: var(--green-dark);
+    background: var(--cream);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.product-type-organic {
+    background: var(--green-light);
+    border-color: var(--green-medium);
+}
+
+/* =========================================================
+   GALERIA DINÂMICA DOS PRODUTOS
+========================================================= */
+
+.products-redesign .product-detail-gallery {
+    width: 100%;
+    margin: 35px 0 45px;
+}
+
+#dynamic-product-gallery {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+#dynamic-product-gallery .product-detail-image {
+    position: relative;
+
+    width: 100%;
+    height: 300px;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background: var(--green-light);
+}
+
+#dynamic-product-gallery .product-detail-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+#dynamic-product-gallery .product-detail-image:hover img {
+    transform: scale(1.025);
+}
+
+#dynamic-product-gallery .product-detail-image img {
+    transition: transform 0.35s ease;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    #dynamic-product-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    #dynamic-product-gallery .product-detail-image {
+        height: 240px;
+    }
+
+}
+
+
+/* CELULAR */
+
+@media (max-width: 650px) {
+
+    #dynamic-product-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    #dynamic-product-gallery .product-detail-image {
+        height: 260px;
+    }
+
+}
+
+/* IMAGENS DOS CARDS DE TERERÉ */
+
+.terere-flavor-image {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: transparent;
+}
+
+.terere-flavor-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================
+   GALERIA EXCLUSIVA - ÓLEOS DE COCO
+========================================= */
+
+.coco-section {
+    width: 100%;
+    margin: 45px auto;
+    padding: 35px 25px;
+    background: #f8f9f4;
+    border-radius: 24px;
+}
+
+/* MANTÉM A GALERIA OCULTA */
+.coco-section[hidden] {
+    display: none !important;
+}
+
+/* TÍTULO */
+.coco-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.coco-heading span {
+    color: #a78b45;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.coco-heading h2 {
+    color: #214d35;
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.coco-heading p {
+    color: #666;
+    font-size: 15px;
+}
+
+/* GRADE DAS 10 FOTOS */
+.coco-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+/* FOTOS QUADRADAS */
+.coco-grid img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    display: block;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* CENTRALIZAR AS DUAS ÚLTIMAS */
+.coco-grid img:nth-child(9) {
+    grid-column: 2;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    .coco-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .coco-grid img:nth-child(9) {
+        grid-column: auto;
+    }
+}
+
+/* CELULAR */
+@media (max-width: 480px) {
+    .coco-section {
+        padding: 25px 12px;
+    }
+
+    .coco-grid {
+        gap: 12px;
+    }
+
+    .coco-heading h2 {
+        font-size: 26px;
+    }
+}
+
+
+/* =========================================
+   GALERIA DE AZEITES E VINAGRES
+========================================= */
+
+.azeites-section {
+    width: 100%;
+    margin: 45px auto;
+    padding: 35px 25px;
+    background: #f8f9f4;
+    border-radius: 24px;
+}
+
+.azeites-section[hidden] {
+    display: none !important;
+}
+
+.azeites-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.azeites-heading span {
+    color: #a78b45;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.azeites-heading h2 {
+    color: #214d35;
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.azeites-heading p {
+    color: #666;
+    font-size: 15px;
+}
+
+/* DUAS IMAGENS GRANDES POR LINHA */
+
+.azeites-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.azeites-grid img {
+    grid-column: span 2;
+}
+
+/* CENTRALIZAR AS DUAS ÚLTIMAS IMAGENS */
+.azeites-grid img:nth-child(7) {
+    grid-column: 2 / span 2;
+}
+
+.azeites-grid img:nth-child(8) {
+    grid-column: 4 / span 2;
+}
+
+
+/* IMAGENS VERTICAIS SEM CORTES */
+.azeites-grid img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1122 / 1402;
+    object-fit: contain;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* CELULAR */
+@media (max-width: 600px) {
+    .azeites-section {
+        padding: 25px 12px;
+    }
+
+    
+.azeites-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+
+.azeites-grid img,
+.azeites-grid img:nth-child(7),
+.azeites-grid img:nth-child(8) {
+    grid-column: auto;
+}
+
+
+    .azeites-heading h2 {
+        font-size: 26px;
+    }
+}
+
+
+/* ESCONDER GALERIA ANTIGA, EXCETO XAROPES */
+#dynamic-product-gallery {
+    display: none !important;
+}
+
+#dynamic-product-gallery:has(.xaropes-item) {
+    display: grid !important;
+}
+
+
+/* CATEGORIA PIMENTAS */
+
+.pimentas-category-card {
+    background: #ffffff;
+    border: 1px solid #e5e7e5;
+    border-radius: 18px;
+    overflow: hidden;
+    height: 100%;
+    transition: transform .2s ease;
+}
+
+.pimentas-category-card:hover {
+    transform: translateY(-4px);
+}
+
+.pimentas-category-card > img {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    object-position: center 40%;
+}
+
+.pimentas-category-info {
+    padding: 20px;
+    color: #38261d;
+}
+
+.pimentas-category-info span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #a34932;
+}
+
+.pimentas-category-info h3 {
+    font-size: 23px;
+    margin: 9px 0;
+}
+
+.pimentas-category-info p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.pimentas-category-info strong {
+    color: #a33326;
+}
+
+/* GALERIA DE PIMENTAS */
+
+.pimentas-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 45px auto;
+    padding: 32px 20px;
+    background: #fffaf6;
+    border-radius: 22px;
+}
+
+.pimentas-section[hidden] {
+    display: none !important;
+}
+
+.pimentas-heading {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.pimentas-heading span {
+    color: #ad4930;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.pimentas-heading h2 {
+    color: #54291d;
+    font-size: 34px;
+    margin: 10px 0;
+}
+
+.pimentas-heading p {
+    color: #6f625b;
+}
+
+/* 2 IMAGENS POR LINHA */
+
+.pimentas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.pimentas-grid img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.10);
+}
+
+
+/* CELULAR */
+@media (max-width: 650px) {
+    .pimentas-section {
+        padding: 24px 12px;
+    }
+
+    .pimentas-heading h2 {
+        font-size: 27px;
+    }
+
+    .pimentas-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+}
+
+
+/* ESCONDER TRADICIONAIS E ORGÂNICOS SOMENTE EM PIMENTAS */
+#detalhe-produto.categoria-pimentas #product-type-info {
+    display: none !important;
+}
+
+/* ESCONDER TRADICIONAIS E ORGÂNICOS EM SUPLEMENTOS */
+#detalhe-produto.categoria-suplementos #product-type-info {
+    display: none !important;
+}
+
+
+/* ESPAÇO ENTRE PIMENTAS E NOSSOS QUERIDINHOS */
+.pimentas-category-card {
+    margin-bottom: 40px;
+}
+
+/* SUPLEMENTOS E CÁPSULAS */
+
+.suplementos-section[hidden] {
+  display: none !important;
+}
+
+.suplementos-section {
+  margin-top: 35px;
+  padding-bottom: 50px;
+}
+
+.suplementos-intro {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.suplementos-intro span {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #a87938;
+}
+
+.suplementos-intro h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  color: #193e2b;
+  margin: 12px 0;
+}
+
+.suplementos-intro p {
+  font-size: 15px;
+  color: #666;
+}
+
+.suplementos-grupo {
+  margin-bottom: 55px;
+}
+
+.suplementos-grupo h3 {
+  color: #193e2b;
+  font-size: 25px;
+  margin-bottom: 22px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.suplementos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.suplementos-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Imagem sozinha na última linha centralizada */
+
+.suplementos-grid img:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  width: calc(50% - 12px);
+  justify-self: center;
+}
+
+@media (max-width: 700px) {
+  .suplementos-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .suplementos-grid img:last-child:nth-child(odd) {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .suplementos-grupo h3 {
+    font-size: 22px;
+  }
+}
+
+/* SAÚDE E BEM-ESTAR - 3 IMAGENS NA MESMA FILEIRA */
+
+#galeria-suplementos .suplementos-grupo:nth-of-type(1) .suplementos-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+#galeria-suplementos .suplementos-grupo:nth-of-type(1) .suplementos-grid img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    min-width: 0;
+}
+
+/* MANTER UMA IMAGEM POR LINHA NO CELULAR */
+@media (max-width: 700px) {
+    #galeria-suplementos .suplementos-grupo:nth-of-type(1) .suplementos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* LAYOUT CORRIGIDO - SAÚDE E BEM-ESTAR */
+
+#galeria-suplementos .grupo-saude {
+    display: block !important;
+    width: 100% !important;
+    max-width: 1200px;
+    margin: 0 auto 55px;
+}
+
+#galeria-suplementos .grupo-saude h3 {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+#galeria-suplementos .grupo-saude .suplementos-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 20px !important;
+    width: 100% !important;
+    align-items: start !important;
+}
+
+#galeria-suplementos .grupo-saude .suplementos-grid img {
+    display: block !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    justify-self: stretch !important;
+    object-fit: contain !important;
+}
+
+@media (max-width: 700px) {
+    #galeria-suplementos .grupo-saude .suplementos-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+
+/* LAYOUT DEFINITIVO - 3 IMAGENS VERTICAIS */
+
+#galeria-suplementos .grupo-saude {
+    display: block !important;
+    width: 100% !important;
+    max-width: 1200px;
+    margin: 0 auto 55px;
+}
+
+#galeria-suplementos .grupo-saude h3 {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 24px;
+}
+
+#galeria-suplementos .grupo-saude .suplementos-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    align-items: start !important;
+}
+
+#galeria-suplementos .grupo-saude .suplementos-grid img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+    justify-self: stretch !important;
+    overflow: visible !important;
+}
+
+@media (max-width: 700px) {
+    #galeria-suplementos .grupo-saude .suplementos-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* TEXTOS PRETOS - NOSSOS QUERIDINHOS */
+
+/* Frase abaixo do título */
+.terere-showcase-header p {
+    color: #000000 !important;
+    opacity: 1 !important;
+}
+
+/* Descrições dos quatro cards */
+.terere-benefit small {
+    color: #000000 !important;
+    opacity: 1 !important;
+}
+
+/* FRASE DOS QUERIDINHOS - FUNDO BEGE COM BORDA SUAVE */
+
+.terere-showcase-header p {
+    color: #000000 !important;
+    opacity: 1 !important;
+    background: rgba(248, 246, 238, 0.95);
+    border: 1px solid #d8c6a7;
+    border-radius: 12px;
+    padding: 12px 24px;
+    width: fit-content;
+    max-width: 90%;
+    margin: 18px auto 0;
+    text-align: center;
+}
+
+/* GALERIA DE XAROPES */
+
+#dynamic-product-gallery:has(.xaropes-item) {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+
+#dynamic-product-gallery .xaropes-item {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #f8f6ef;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+#dynamic-product-gallery .xaropes-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* IMAGEM HORIZONTAL EM DESTAQUE */
+
+#dynamic-product-gallery .xaropes-banner {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+    #dynamic-product-gallery:has(.xaropes-item) {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+/* ESCONDER TRADICIONAIS E ORGÂNICOS NOS XAROPES */
+
+#detalhe-produto.categoria-bebidas .product-type-info {
+    display: none !important;
+}
+
+/* CORREÇÃO FINAL - XAROPES E BEBIDAS NATURAIS */
+
+#dynamic-product-gallery:has(.xaropes-item) {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+
+#dynamic-product-gallery .product-detail-image.xaropes-item {
+    width: 100%;
+    height: auto !important;
+    min-height: 0;
+    display: block;
+    overflow: visible;
+    background: transparent;
+    border-radius: 0;
+}
+
+#dynamic-product-gallery .xaropes-item img {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center;
+    border-radius: 12px;
+}
+
+#dynamic-product-gallery .xaropes-banner {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+    #dynamic-product-gallery:has(.xaropes-item) {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+/* MEL E PRÓPOLIS - GALERIA EXCLUSIVA */
+
+#detalhe-produto.categoria-mel #dynamic-product-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: start;
+}
+
+#detalhe-produto.categoria-mel
+#dynamic-product-gallery .product-detail-image {
+    width: 100%;
+    height: auto !important;
+    min-height: 0;
+    display: block;
+    overflow: visible;
+    border-radius: 14px;
+    background: transparent;
+}
+
+#detalhe-produto.categoria-mel
+#dynamic-product-gallery .product-detail-image img {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    object-fit: contain !important;
+    border-radius: 14px;
+}
+
+/* ÚLTIMA FOTO EM DESTAQUE */
+#detalhe-produto.categoria-mel
+#dynamic-product-gallery .product-detail-image:last-child {
+    grid-column: 2;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    #detalhe-produto.categoria-mel #dynamic-product-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #detalhe-produto.categoria-mel
+    #dynamic-product-gallery .product-detail-image:last-child {
+        grid-column: auto;
+    }
+}
+
+/* CELULAR */
+@media (max-width: 650px) {
+    #detalhe-produto.categoria-mel #dynamic-product-gallery {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+/* MEL E PRÓPOLIS - PREENCHER ESPAÇOS VAZIOS */
+
+#dynamic-product-gallery:has(.mel-item) {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    align-items: start;
+}
+
+#dynamic-product-gallery .mel-item {
+    grid-column: auto !important;
+    grid-row: auto !important;
+}
+
+/* MEL E PRÓPOLIS - ÚLTIMA FOTO NA COLUNA DA DIREITA */
+
+#detalhe-produto.categoria-mel
+#dynamic-product-gallery .product-detail-image:last-child {
+    grid-column: 3 !important;
+    grid-row: 4 !important;
+}
+
+@media (max-width: 900px) {
+    #detalhe-produto.categoria-mel
+    #dynamic-product-gallery .product-detail-image:last-child {
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
+}
+
+/* MEL E PRÓPOLIS - PADRONIZAR ÚLTIMA FOTO */
+
+#detalhe-produto.categoria-mel
+#dynamic-product-gallery .product-detail-image:last-child {
+    grid-column: 3 !important;
+    grid-row: 4 !important;
+    width: 100% !important;
+    max-width: none !important;
+    justify-self: stretch !important;
+}
+
+#detalhe-produto.categoria-mel
+#dynamic-product-gallery .product-detail-image:last-child img {
+    display: block;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    object-fit: contain !important;
+}
+
+@media (max-width: 900px) {
+    #detalhe-produto.categoria-mel
+    #dynamic-product-gallery .product-detail-image:last-child {
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
+}
+
+/* =====================================================
+   CATEGORIA 14 - ACESSÓRIOS PARA TERERÉ
+===================================================== */
+
+/* Imagem de capa da categoria */
+.categoria-terere .professional-category-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Galeria exclusiva da categoria 14 */
+#detalhe-produto.categoria-terere #dynamic-product-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+/* Bloco individual de cada imagem */
+#detalhe-produto.categoria-terere
+#dynamic-product-gallery .product-detail-image {
+    width: 100%;
+    height: auto !important;
+    min-height: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    background: transparent;
+}
+
+/* Preservar as imagens originais */
+#detalhe-produto.categoria-terere
+#dynamic-product-gallery .product-detail-image img {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    object-fit: contain !important;
+    border-radius: 16px;
+}
+
+/* Ajuste para celular */
+@media (max-width: 650px) {
+
+    #detalhe-produto.categoria-terere
+    #dynamic-product-gallery {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+}
+
+/* CATEGORIA 14 - ALINHAMENTO COM OS OUTROS CARDS */
+
+.categoria-terere {
+    height: auto !important;
+    min-height: 0 !important;
+    align-self: stretch;
+    box-sizing: border-box;
+}
+
+.categoria-terere .category-open {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.categoria-terere .professional-category-image {
+    height: 190px;
+    min-height: 0;
+    flex-shrink: 0;
+}
+
+.categoria-terere .professional-category-content {
+    flex: 1;
+    min-height: 0;
+}
+
+/* ==========================================
+   CATEGORIA 13 - PIMENTAS E MOLHOS
+   IGUALAR ALTURA AOS DEMAIS CARDS
+========================================== */
+
+.products-page-grid > .category-open:has(.pimentas-category-card) {
+    height: 100% !important;
+    align-self: stretch;
+    display: block;
+}
+
+.pimentas-category-card {
+    height: 100% !important;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.pimentas-category-card > img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.pimentas-category-info {
+    flex: 1;
+}
+
+/* ESPAÇAMENTO ENTRE OS CARDS E NOSSOS QUERIDINHOS */
+
+.terere-showcase {
+    margin-top: 40px !important;
+}
+
+/* ==========================================
+   PIMENTAS - RODAPÉ IGUAL À CATEGORIA 14
+========================================== */
+
+.pimentas-category-card {
+    display: flex;
+    flex-direction: column;
+    height: 100% !important;
+}
+
+.pimentas-category-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px 24px !important;
+}
+
+.pimentas-category-info .professional-category-link {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: auto !important;
+    padding-top: 18px;
+    border-top: 1px solid #e8e8e8;
+    color: #173d28;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.pimentas-category-info .professional-category-link strong {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #59623c;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+/* ==========================================
+   PIMENTAS - RODAPÉ IGUAL AOS CARDS ORIGINAIS
+========================================== */
+
+.pimentas-category-info .professional-category-link {
+    color: #173d28 !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    letter-spacing: inherit !important;
+    text-transform: inherit !important;
+}
+
+/* Seta redonda - verde escuro */
+.pimentas-category-info .professional-category-link strong {
+    background: #173d28 !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Título da categoria */
+.pimentas-category-info h3 {
+    color: #173d28 !important;
+}
+
+/* BOLINHA 13 - PIMENTAS E MOLHOS */
+
+.pimentas-category-card {
+    position: relative;
+}
+
+.pimentas-category-number {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 5;
+
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #365d47;
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* ==========================================
+   GRANOLAS - GALERIA PREMIUM
+========================================== */
+
+#detalhe-produto.categoria-granolas #dynamic-product-gallery {
+    display: grid !important;
+    grid-template-columns: 1.05fr 1fr 1fr !important;
+    grid-template-rows: repeat(2, 260px);
+    gap: 16px !important;
+    align-items: stretch;
+}
+
+/* Aparência de todas as fotos */
+#detalhe-produto.categoria-granolas #dynamic-product-gallery .product-detail-image {
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 0;
+    min-height: 0;
+    margin: 0 !important;
+    padding: 12px !important;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #f3f5ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Foto principal vertical */
+#detalhe-produto.categoria-granolas #dynamic-product-gallery .product-detail-image:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+/* Foto zero açúcar */
+#detalhe-produto.categoria-granolas #dynamic-product-gallery .product-detail-image:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* Foto diet */
+#detalhe-produto.categoria-granolas #dynamic-product-gallery .product-detail-image:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+/* Foto panorâmica */
+#detalhe-produto.categoria-granolas #dynamic-product-gallery .product-detail-image:nth-child(4) {
+    grid-column: 2 / 4;
+    grid-row: 2;
+}
+
+/* Mostrar as imagens inteiras */
+#detalhe-produto.categoria-granolas #dynamic-product-gallery .product-detail-image img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 8px;
+}
+
+/* Tablet e celular */
+@media (max-width: 768px) {
+    #detalhe-produto.categoria-granolas #dynamic-product-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        grid-template-rows: auto !important;
+        gap: 12px !important;
+    }
+
+    #detalhe-produto.categoria-granolas #dynamic-product-gallery .product-detail-image {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        height: 230px !important;
+        padding: 8px !important;
+    }
+
+    #detalhe-produto.categoria-granolas #dynamic-product-gallery .product-detail-image:first-child {
+        grid-column: 1 / -1 !important;
+        height: 420px !important;
+    }
+
+    #detalhe-produto.categoria-granolas #dynamic-product-gallery .product-detail-image:last-child {
+        grid-column: 1 / -1 !important;
+        height: 220px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #detalhe-produto.categoria-granolas #dynamic-product-gallery {
+        grid-template-columns: 1fr !important;
+    }
+
+    #detalhe-produto.categoria-granolas #dynamic-product-gallery .product-detail-image {
+        grid-column: 1 !important;
+        height: 300px !important;
+    }
+
+    #detalhe-produto.categoria-granolas #dynamic-product-gallery .product-detail-image:first-child {
+        height: 440px !important;
+    }
+}
+
+/* GRANOLAS - SOMENTE AS IMAGENS, SEM BORDAS */
+
+#detalhe-produto.categoria-granolas
+#dynamic-product-gallery .product-detail-image {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+#detalhe-produto.categoria-granolas
+#dynamic-product-gallery .product-detail-image img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* GRANOLAS - IMAGENS PRÓXIMAS E SEM CORTES */
+
+#detalhe-produto.categoria-granolas #dynamic-product-gallery {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto !important;
+    gap: 6px !important;
+    align-items: start !important;
+}
+
+/* Remover molduras e espaços internos */
+#detalhe-produto.categoria-granolas #dynamic-product-gallery .product-detail-image {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+}
+
+/* Mostrar cada imagem inteira */
+#detalhe-produto.categoria-granolas #dynamic-product-gallery .product-detail-image img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+/* Primeira imagem vertical à esquerda */
+#detalhe-produto.categoria-granolas #dynamic-product-gallery .product-detail-image:first-child {
+    grid-column: 1 !important;
+    grid-row: 1 / 4 !important;
+}
+
+/* Outras três imagens à direita */
+#detalhe-produto.categoria-granolas #dynamic-product-gallery .product-detail-image:nth-child(2) {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+}
+
+#detalhe-produto.categoria-granolas #dynamic-product-gallery .product-detail-image:nth-child(3) {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+}
+
+#detalhe-produto.categoria-granolas #dynamic-product-gallery .product-detail-image:nth-child(4) {
+    grid-column: 2 !important;
+    grid-row: 3 !important;
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    #detalhe-produto.categoria-granolas #dynamic-product-gallery {
+        grid-template-columns: 1fr !important;
+        gap: 6px !important;
+    }
+
+    #detalhe-produto.categoria-granolas #dynamic-product-gallery .product-detail-image {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+    }
+}
+
+/* GRANOLAS - DESCER A IMAGEM PROMOCIONAL */
+
+@media (min-width: 601px) {
+    #detalhe-produto.categoria-granolas
+    #dynamic-product-gallery .product-detail-image:first-child {
+        align-self: end !important;
+    }
+}
+
+/* ==========================================
+   GRANOLAS - LAYOUT ORGANIZADO
+========================================== */
+
+#detalhe-produto.categoria-granolas #dynamic-product-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: auto !important;
+    gap: 8px !important;
+    align-items: start !important;
+}
+
+/* Cada imagem */
+#detalhe-produto.categoria-granolas
+#dynamic-product-gallery .product-detail-image {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+}
+
+/* Fotos completas, sem cortes */
+#detalhe-produto.categoria-granolas
+#dynamic-product-gallery .product-detail-image img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    border-radius: 0 !important;
+}
+
+/* Imagem promocional ocupa a coluna esquerda */
+#detalhe-produto.categoria-granolas
+#dynamic-product-gallery .product-detail-image:nth-child(2) {
+    grid-column: 1 !important;
+    grid-row: 2 / 4 !important;
+}
+
+/* Arte nova acima da promoção */
+#detalhe-produto.categoria-granolas
+#dynamic-product-gallery .product-detail-image:nth-child(1) {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+}
+
+/* Outras imagens à direita */
+#detalhe-produto.categoria-granolas
+#dynamic-product-gallery .product-detail-image:nth-child(3) {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+}
+
+#detalhe-produto.categoria-granolas
+#dynamic-product-gallery .product-detail-image:nth-child(4) {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+}
+
+#detalhe-produto.categoria-granolas
+#dynamic-product-gallery .product-detail-image:nth-child(5) {
+    grid-column: 2 !important;
+    grid-row: 3 !important;
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    #detalhe-produto.categoria-granolas #dynamic-product-gallery {
+        grid-template-columns: 1fr !important;
+    }
+
+    #detalhe-produto.categoria-granolas
+    #dynamic-product-gallery .product-detail-image {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+    }
+}
+
+/* ==========================================
+   GRANOLAS - DUAS COLUNAS INDEPENDENTES
+========================================== */
+
+#detalhe-produto.categoria-granolas #dynamic-product-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+    align-items: start !important;
+}
+
+#detalhe-produto.categoria-granolas .granolas-coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+#detalhe-produto.categoria-granolas .granolas-foto {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+@media (max-width: 600px) {
+    #detalhe-produto.categoria-granolas #dynamic-product-gallery {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* TEMPEROS E ESPECIARIAS - 2 COLUNAS E 2 FILEIRAS */
+
+#detalhe-produto.categoria-especiarias #dynamic-product-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    align-items: start !important;
+}
+
+#detalhe-produto.categoria-especiarias
+#dynamic-product-gallery .product-detail-image {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+}
+
+#detalhe-produto.categoria-especiarias
+#dynamic-product-gallery .product-detail-image img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+@media (max-width: 600px) {
+    #detalhe-produto.categoria-especiarias #dynamic-product-gallery {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ==========================================
+   SABONETES E CUIDADOS - LAYOUT FINAL
+========================================== */
+
+#detalhe-produto.categoria-cuidados #dynamic-product-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: repeat(3, auto) !important;
+    gap: 6px !important;
+    align-items: start !important;
+}
+
+/* Remover molduras e fundos */
+#detalhe-produto.categoria-cuidados
+#dynamic-product-gallery .product-detail-image {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+}
+
+/* Imagens inteiras, sem cortes */
+#detalhe-produto.categoria-cuidados
+#dynamic-product-gallery .product-detail-image img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+/* Rosa Mosqueta */
+#detalhe-produto.categoria-cuidados
+#dynamic-product-gallery .product-detail-image:nth-child(1) {
+    grid-column: 1 !important;
+    grid-row: 1 / 3 !important;
+}
+
+/* Camomila */
+#detalhe-produto.categoria-cuidados
+#dynamic-product-gallery .product-detail-image:nth-child(2) {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+}
+
+/* Enxofre */
+#detalhe-produto.categoria-cuidados
+#dynamic-product-gallery .product-detail-image:nth-child(3) {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+}
+
+/* Sete Ervas */
+#detalhe-produto.categoria-cuidados
+#dynamic-product-gallery .product-detail-image:nth-child(4) {
+    grid-column: 1 / 3 !important;
+    grid-row: 3 !important;
+    width: 70% !important;
+    justify-self: center !important;
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    #detalhe-produto.categoria-cuidados #dynamic-product-gallery {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto !important;
+    }
+
+    #detalhe-produto.categoria-cuidados
+    #dynamic-product-gallery .product-detail-image {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+        width: 100% !important;
+    }
+}
+
+/* ==========================================
+   SABONETES - GRADE 2 X 2
+========================================== */
+
+#detalhe-produto.categoria-cuidados #dynamic-product-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+    align-items: stretch !important;
+}
+
+#detalhe-produto.categoria-cuidados
+#dynamic-product-gallery .product-detail-image {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 3 / 2 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+#detalhe-produto.categoria-cuidados
+#dynamic-product-gallery .product-detail-image img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    #detalhe-produto.categoria-cuidados #dynamic-product-gallery {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* SABONETES - ORGANIZAÇÃO FINAL */
+
+/* Duas colunas independentes */
+#detalhe-produto.categoria-cuidados #dynamic-product-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: auto auto !important;
+    gap: 4px !important;
+    align-items: start !important;
+}
+
+/* Retirar alturas fixas e espaços */
+#detalhe-produto.categoria-cuidados
+#dynamic-product-gallery .product-detail-image {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    display: block !important;
+}
+
+/* Imagens completas */
+#detalhe-produto.categoria-cuidados
+#dynamic-product-gallery .product-detail-image img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+}
+
+/* Rosa Mosqueta - esquerda, em cima */
+#detalhe-produto.categoria-cuidados
+#dynamic-product-gallery .product-detail-image:nth-child(1) {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+}
+
+/* Camomila - direita, em cima */
+#detalhe-produto.categoria-cuidados
+#dynamic-product-gallery .product-detail-image:nth-child(2) {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+}
+
+/* Enxofre - direita, embaixo */
+#detalhe-produto.categoria-cuidados
+#dynamic-product-gallery .product-detail-image:nth-child(3) {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+}
+
+/* Sete Ervas - esquerda, embaixo */
+#detalhe-produto.categoria-cuidados
+#dynamic-product-gallery .product-detail-image:nth-child(4) {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    #detalhe-produto.categoria-cuidados #dynamic-product-gallery {
+        grid-template-columns: 1fr !important;
+    }
+
+    #detalhe-produto.categoria-cuidados
+    #dynamic-product-gallery .product-detail-image {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+    }
+}
+
+/* AJUSTE FINAL - SABONETES */
+
+#detalhe-produto.categoria-cuidados #dynamic-product-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 4px !important;
+    row-gap: 4px !important;
+    align-items: start !important;
+}
+
+/* Todas as fotos ocupam a largura da coluna */
+#detalhe-produto.categoria-cuidados
+#dynamic-product-gallery .product-detail-image {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    justify-self: stretch !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Remover limitações das imagens */
+#detalhe-produto.categoria-cuidados
+#dynamic-product-gallery .product-detail-image img {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    object-fit: contain !important;
+}
+
+/* Sete Ervas ocupa toda a coluna esquerda */
+#detalhe-produto.categoria-cuidados
+#dynamic-product-gallery .product-detail-image:nth-child(4) {
+    width: 100% !important;
+    max-width: none !important;
+    justify-self: stretch !important;
+}
+
+/* SABONETES - COLUNAS INDEPENDENTES */
+
+#detalhe-produto.categoria-cuidados #dynamic-product-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 4px !important;
+    align-items: start !important;
+}
+
+#detalhe-produto.categoria-cuidados .sabonetes-coluna {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    min-width: 0;
+}
+
+#detalhe-produto.categoria-cuidados .sabonetes-foto {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+@media (max-width: 600px) {
+    #detalhe-produto.categoria-cuidados #dynamic-product-gallery {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+
+/* ÓLEOS NATURAIS */
+
+.oleos-naturais-section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 48px auto 30px;
+}
+
+.oleos-naturais-heading {
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+.oleos-naturais-heading > span {
+    display: block;
+    color: #8a7952;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.oleos-naturais-heading h3 {
+    color: #173d28;
+    font-family: Georgia, serif;
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 500;
+    margin: 0 0 8px;
+}
+
+.oleos-naturais-heading p {
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+}
+
+.oleos-naturais-destaque {
+    margin-bottom: 12px;
+}
+
+.oleos-naturais-destaque img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.oleos-naturais-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.oleos-naturais-grid img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1122 / 1402;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.25s ease;
+}
+
+.oleos-naturais-grid img:hover {
+    transform: scale(1.015);
+}
+
+@media (max-width: 600px) {
+    .oleos-naturais-section {
+        margin-top: 35px;
+    }
+
+    .oleos-naturais-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+}
+
+
+/* ==========================================
+   CHÁS, RAÍZES E CIPÓS
+========================================== */
+
+#detalhe-produto.categoria-chas #dynamic-product-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    align-items: start !important;
+}
+
+/* Cada imagem */
+#detalhe-produto.categoria-chas
+#dynamic-product-gallery .product-detail-image {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+}
+
+/* Mostrar as imagens completas */
+#detalhe-produto.categoria-chas
+#dynamic-product-gallery .product-detail-image img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    border-radius: 8px !important;
+}
+
+/* Hortelã - destaque superior */
+#detalhe-produto.categoria-chas
+#dynamic-product-gallery .product-detail-image:nth-child(1) {
+    grid-column: 1 / -1 !important;
+}
+
+/* Segunda imagem e Hibisco lado a lado */
+
+/* Boldo - imagem panorâmica */
+#detalhe-produto.categoria-chas
+#dynamic-product-gallery .product-detail-image:nth-child(4) {
+    grid-column: 1 / -1 !important;
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    #detalhe-produto.categoria-chas #dynamic-product-gallery {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+
+    #detalhe-produto.categoria-chas
+    #dynamic-product-gallery .product-detail-image {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+    }
+}
+
+
+/* ==========================================
+   FARINHAS - GALERIA DE IMAGENS
+========================================== */
+
+#detalhe-produto.categoria-farinhas #dynamic-product-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    align-items: start !important;
+}
+
+/* Blocos das imagens */
+#detalhe-produto.categoria-farinhas
+#dynamic-product-gallery .product-detail-image {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+}
+
+/* Imagens completas, sem cortes */
+#detalhe-produto.categoria-farinhas
+#dynamic-product-gallery .product-detail-image img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    border-radius: 8px !important;
+}
+
+/* Primeira imagem em destaque */
+#detalhe-produto.categoria-farinhas
+#dynamic-product-gallery .product-detail-image:nth-child(1) {
+    grid-column: 1 / -1 !important;
+}
+
+
+/* FARINHAS - IGUALAR ALTURA DAS DUAS FOTOS */
+#detalhe-produto.categoria-farinhas
+#dynamic-product-gallery .product-detail-image:nth-child(2),
+#detalhe-produto.categoria-farinhas
+#dynamic-product-gallery .product-detail-image:nth-child(3) {
+    height: 300px !important;
+    overflow: hidden !important;
+}
+
+#detalhe-produto.categoria-farinhas
+#dynamic-product-gallery .product-detail-image:nth-child(2) img,
+#detalhe-produto.categoria-farinhas
+#dynamic-product-gallery .product-detail-image:nth-child(3) img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+/* CELULAR */
+@media (max-width: 600px) {
+    #detalhe-produto.categoria-farinhas
+    #dynamic-product-gallery .product-detail-image:nth-child(2),
+    #detalhe-produto.categoria-farinhas
+    #dynamic-product-gallery .product-detail-image:nth-child(3) {
+        height: auto !important;
+    }
+
+    #detalhe-produto.categoria-farinhas
+    #dynamic-product-gallery .product-detail-image:nth-child(2) img,
+    #detalhe-produto.categoria-farinhas
+    #dynamic-product-gallery .product-detail-image:nth-child(3) img {
+        height: auto !important;
+        object-fit: contain !important;
+    }
+}
+
+
+/* Quarta imagem panorâmica */
+#detalhe-produto.categoria-farinhas
+#dynamic-product-gallery .product-detail-image:nth-child(4) {
+    grid-column: 1 / -1 !important;
+}
+
+/* Responsividade para celulares */
+@media (max-width: 600px) {
+    #detalhe-produto.categoria-farinhas #dynamic-product-gallery {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+
+    #detalhe-produto.categoria-farinhas
+    #dynamic-product-gallery .product-detail-image {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+    }
+}
+
+
+/* ==========================================
+   CASTANHAS E OLEAGINOSAS
+========================================== */
+
+#detalhe-produto.categoria-castanhas
+#dynamic-product-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    align-items: start !important;
+}
+
+/* Blocos das imagens */
+#detalhe-produto.categoria-castanhas
+#dynamic-product-gallery .product-detail-image {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+}
+
+/* Imagens sem cortes */
+#detalhe-produto.categoria-castanhas
+#dynamic-product-gallery .product-detail-image img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    border-radius: 8px !important;
+}
+
+/* PRIMEIRA IMAGEM - INFORMATIVO COMPLETO */
+#detalhe-produto.categoria-castanhas
+#dynamic-product-gallery .product-detail-image:nth-child(1) {
+    grid-column: 1 / -1 !important;
+}
+
+/* SEGUNDA E TERCEIRA - LADO A LADO */
+#detalhe-produto.categoria-castanhas
+#dynamic-product-gallery .product-detail-image:nth-child(2),
+#detalhe-produto.categoria-castanhas
+#dynamic-product-gallery .product-detail-image:nth-child(3) {
+    align-self: stretch !important;
+    height: 100% !important;
+}
+
+#detalhe-produto.categoria-castanhas
+#dynamic-product-gallery .product-detail-image:nth-child(2) img,
+#detalhe-produto.categoria-castanhas
+#dynamic-product-gallery .product-detail-image:nth-child(3) img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+}
+
+/* QUARTA IMAGEM - PANORÂMICA COMPLETA */
+#detalhe-produto.categoria-castanhas
+#dynamic-product-gallery .product-detail-image:nth-child(4) {
+    grid-column: 1 / -1 !important;
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+
+    #detalhe-produto.categoria-castanhas
+    #dynamic-product-gallery {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+
+    #detalhe-produto.categoria-castanhas
+    #dynamic-product-gallery .product-detail-image {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+        height: auto !important;
+    }
+
+    #detalhe-produto.categoria-castanhas
+    #dynamic-product-gallery .product-detail-image img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+}
+
+
+/* ==========================================
+   PÓS NATURAIS - GALERIA
+========================================== */
+
+#detalhe-produto.categoria-pos
+#dynamic-product-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    align-items: start !important;
+}
+
+/* Blocos das imagens */
+#detalhe-produto.categoria-pos
+#dynamic-product-gallery .product-detail-image {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+}
+
+/* Imagens sem cortes */
+#detalhe-produto.categoria-pos
+#dynamic-product-gallery .product-detail-image img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    border-radius: 8px !important;
+}
+
+/* PRIMEIRA IMAGEM - INFORMATIVO COMPLETO */
+#detalhe-produto.categoria-pos
+#dynamic-product-gallery .product-detail-image:nth-child(1) {
+    grid-column: 1 / -1 !important;
+}
+
+/* SEGUNDA E TERCEIRA - MESMA ALTURA */
+#detalhe-produto.categoria-pos
+#dynamic-product-gallery .product-detail-image:nth-child(2),
+#detalhe-produto.categoria-pos
+#dynamic-product-gallery .product-detail-image:nth-child(3) {
+    height: 300px !important;
+}
+
+#detalhe-produto.categoria-pos
+#dynamic-product-gallery .product-detail-image:nth-child(2) img,
+#detalhe-produto.categoria-pos
+#dynamic-product-gallery .product-detail-image:nth-child(3) img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+/* QUARTA IMAGEM - PANORÂMICA */
+#detalhe-produto.categoria-pos
+#dynamic-product-gallery .product-detail-image:nth-child(4) {
+    grid-column: 1 / -1 !important;
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+
+    #detalhe-produto.categoria-pos
+    #dynamic-product-gallery {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+
+    #detalhe-produto.categoria-pos
+    #dynamic-product-gallery .product-detail-image {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+        height: auto !important;
+    }
+
+    #detalhe-produto.categoria-pos
+    #dynamic-product-gallery .product-detail-image img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+}
+
+
+/* ==========================================
+   CAFÉ MOÍDO E EM GRÃOS
+========================================== */
+
+#detalhe-produto.categoria-cafes
+#dynamic-product-gallery {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0 !important;
+}
+
+/* Bloco da imagem */
+#detalhe-produto.categoria-cafes
+#dynamic-product-gallery .product-detail-image {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+}
+
+/* Imagem horizontal completa */
+#detalhe-produto.categoria-cafes
+#dynamic-product-gallery .product-detail-image img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 10px !important;
+}
+
+
+/* ==========================================
+   ÓLEOS - EXIBIR SOMENTE NA CATEGORIA CERTA
+========================================== */
+
+#galeria-azeites[hidden],
+#galeria-oleo-coco[hidden] {
+    display: none !important;
+}
+
+
+/* ÓLEOS NATURAIS - RESPEITAR A VISIBILIDADE */
+#galeria-oleos-naturais[hidden] {
+    display: none !important;
+}
+
+
+/* CORREÇÃO DAS CAPAS - PIMENTAS E TERERÉ */
+
+.category-card:has([data-category="pimentas"]) img,
+.category-card:has([data-category="terere"]) img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+    object-position: center !important;
+}
+
+
+/* ==========================================
+   CORREÇÃO DAS CAPAS - PIMENTAS E TERERÉ
+========================================== */
+
+/* Mantém as duas capas com a mesma altura */
+.pimentas-category-card > img,
+.categoria-terere .professional-category-image {
+    width: 100% !important;
+    height: 205px !important;
+    min-height: 205px !important;
+    max-height: 205px !important;
+    display: block !important;
+}
+
+/* Pimentas: mostra a imagem sem cortar */
+.pimentas-category-card > img {
+    object-fit: contain !important;
+    object-position: center !important;
+}
+
+/* Tereré: mostra a imagem sem cortar */
+.categoria-terere .professional-category-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+}
+
+/* Impede que a imagem ultrapasse o card */
+.pimentas-category-card,
+.categoria-terere {
+    overflow: hidden !important;
+}
+
+
+/* ==========================================
+   CAPAS PIMENTAS E TERERÉ - SEM BORDAS
+========================================== */
+
+/* Imagem de Pimentas */
+.pimentas-category-card > img {
+    width: 100% !important;
+    height: 185px !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+}
+
+/* Área da imagem de Tereré */
+.categoria-terere .professional-category-image {
+    width: 100% !important;
+    height: 185px !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Imagem de Tereré */
+.categoria-terere .professional-category-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
 }

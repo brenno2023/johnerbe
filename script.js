@@ -464,8 +464,8 @@ const categoriasProdutos = {
         subtitulo:
             "Mais sabor para suas preparações.",
 
-        texto:
-            "Conheça nossa seleção de temperos e especiarias para diferentes tipos de receitas.",
+       texto:
+    "Conheça nossa seleção de temperos, especiarias, alho, pimentas e outras opções para diferentes tipos de receitas.",
 
         pasta:
             "especiarias"
@@ -555,42 +555,42 @@ const categoriasProdutos = {
 
     "mel-propolis": {
 
-        titulo:
-            "Mel e Própolis",
+    titulo:
+        "Mel, Própolis e Derivados",
 
-        descricao:
-            "Produtos naturais selecionados.",
+    descricao:
+        "Produtos selecionados e diferentes opções disponíveis.",
 
-        subtitulo:
-            "Conheça nossa seleção.",
+    subtitulo:
+        "Conheça nossa variedade.",
 
-        texto:
-            "Mel, própolis e outras opções disponíveis em nossa loja.",
+    texto:
+        "Encontre mel, própolis, extratos de própolis, opções sem álcool, pólen e outros derivados disponíveis na John Erbe.",
 
-        pasta:
-            "mel-propolis"
+    pasta:
+        "mel-propolis"
 
-    },
+},
 
 
     oleos: {
 
-        titulo:
-            "Óleos Essenciais",
+    titulo:
+        "Óleos, Azeites e Derivados",
 
-        descricao:
-            "Aromas para diferentes momentos.",
+    descricao:
+        "Diversas opções para diferentes usos e preferências.",
 
-        subtitulo:
-            "Cuidado e bem-estar.",
+    subtitulo:
+        "Variedade em óleos e produtos selecionados.",
 
-        texto:
-            "Conheça nossa seleção de óleos essenciais e diferentes aromas.",
+    texto:
+    "Conheça nossa seleção de óleos, azeites, vinagres tradicionais e orgânicos e outros produtos disponíveis na John Erbe.",
 
-        pasta:
-            "oleos"
+    pasta:
+        "oleos"
 
-    },
+},
 
 
     granolas: {
@@ -615,64 +615,90 @@ const categoriasProdutos = {
 
     suplementos: {
 
-        titulo:
-            "Creatina e Suplementos",
+    titulo:
+        "Suplementos e Cápsulas",
 
-        descricao:
-            "Produtos para diferentes objetivos.",
+    descricao:
+        "Diversas opções de suplementação disponíveis.",
 
-        subtitulo:
-            "Suplementação e variedade.",
+    subtitulo:
+        "Variedade para diferentes necessidades.",
 
-        texto:
-            "Conheça nossa seleção de creatinas e outros suplementos disponíveis.",
+    texto:
+        "Conheça nossa seleção de creatinas, suplementos, cápsulas e outras opções disponíveis na loja.",
 
-        pasta:
-            "suplementos"
+    pasta:
+        "suplementos"
 
-    },
+},
 
 
     cuidados: {
 
-        titulo:
-            "Cuidados e Bem-estar",
+    titulo:
+        "Sabonetes e Cuidados",
 
-        descricao:
-            "Produtos para cuidado pessoal e bem-estar.",
+    descricao:
+        "Produtos selecionados para cuidado pessoal.",
 
-        subtitulo:
-            "Cuidado para diferentes momentos.",
+    subtitulo:
+        "Sabonetes e opções para diferentes cuidados.",
 
-        texto:
-            "Sabonetes, pomadas, géis de massagem e outros produtos selecionados.",
+    texto:
+        "Encontre sabonetes em diferentes opções, além de pomadas, géis de massagem e outros produtos de cuidado pessoal.",
 
-        pasta:
-            "cuidados"
+    pasta:
+        "cuidados"
 
-    },
+},
 
 
     bebidas: {
 
-        titulo:
-            "Bebidas e Especiais",
+    titulo:
+        "Xaropes e Bebidas Naturais",
 
-        descricao:
-            "Conheça algumas opções especiais da John Erbe.",
+    descricao:
+        "Conheça diferentes opções disponíveis na loja.",
 
-        subtitulo:
-            "Sabores diferentes para você conhecer.",
+    subtitulo:
+        "Variedade de sabores e produtos.",
 
-        texto:
-            "Xaropes, refrigerantes naturais, ingredientes para gin e outras opções.",
+   texto:
+    "Encontre xaropes, bebidas naturais, tererés em diversos sabores, cuias e outras opções especiais disponíveis na John Erbe.",
 
-        pasta:
-            "bebidas"
+    pasta:
+        "bebidas"
 
-    }
+},
+
+
+pimentas: {
+    titulo: "Pimentas e Molhos",
+    descricao: "Molhos picantes, cremes e conservas para diferentes receitas.",
+    subtitulo: "Sabores intensos e marcantes.",
+    texto: "Conheça nossa variedade de pimentas e molhos.",
+        pasta: "pimentas"
+},
+
+terere: {
+
+    titulo: "Cuias, Copos, Guampas e Bombas para Tereré",
+
+    descricao: "Conheça nossa variedade de acessórios para tereré.",
+
+    subtitulo: "Diversos modelos disponíveis.",
+
+    texto: "Encontre cuias, copos, guampas e bombas para tereré em diferentes modelos e estilos.",
+
+    pasta: "terere"
+
+}
 
 };
+
+
+
 
 
 /* =========================================================
@@ -727,6 +753,48 @@ document.addEventListener(
 
         const categoria =
             card.dataset.category;
+
+            /* MOSTRAR SUPLEMENTOS APENAS NA CATEGORIA SUPLEMENTOS */
+const galeriaSuplementos = document.getElementById("galeria-suplementos");
+
+if (galeriaSuplementos) {
+    galeriaSuplementos.hidden = categoria !== "suplementos";
+}
+            
+/* MOSTRAR GALERIA DE PIMENTAS */
+const galeriaPimentas = document.getElementById("galeria-pimentas");
+
+if (galeriaPimentas) {
+    galeriaPimentas.hidden = categoria !== "pimentas";
+}
+
+/* ESCONDER TARJAS SOMENTE EM PIMENTAS */
+const detalheProduto = document.getElementById("detalhe-produto");
+
+if (detalheProduto) {
+    detalheProduto.classList.toggle("categoria-pimentas", categoria === "pimentas");
+    detalheProduto.classList.toggle("categoria-suplementos", categoria === "suplementos");
+    detalheProduto.classList.toggle("categoria-bebidas", categoria === "bebidas");
+    detalheProduto.classList.toggle("categoria-mel", categoria === "mel-propolis");
+    detalheProduto.classList.toggle("categoria-terere", categoria === "terere");
+    detalheProduto.classList.toggle("categoria-granolas", categoria === "granolas");
+    detalheProduto.classList.toggle("categoria-especiarias", categoria === "especiarias");
+    detalheProduto.classList.toggle("categoria-cuidados", categoria === "cuidados");
+    detalheProduto.classList.toggle("categoria-chas", categoria === "chas");
+    detalheProduto.classList.toggle("categoria-farinhas", categoria === "farinhas");
+    detalheProduto.classList.toggle("categoria-castanhas", categoria === "castanhas");  
+    detalheProduto.classList.toggle("categoria-pos", categoria === "pos");
+    detalheProduto.classList.toggle("categoria-cafes", categoria === "cafes");
+}
+
+            
+/* MOSTRAR ÓLEOS DE COCO APENAS NA CATEGORIA ÓLEOS */
+const galeriaCoco = document.getElementById("galeria-oleo-coco");
+
+if (galeriaCoco) {
+    galeriaCoco.hidden = categoria !== "oleos";
+}
+
 
 
         const dados =
@@ -814,6 +882,24 @@ document.addEventListener(
 
         }
 
+        
+/* ÓLEOS NATURAIS - SOMENTE NA CATEGORIA ÓLEOS */
+const galeriaOleosNaturais = document.getElementById("galeria-oleos-naturais");
+
+if (galeriaOleosNaturais) {
+    galeriaOleosNaturais.hidden = categoria !== "oleos";
+}
+
+
+        
+/* MOSTRAR AZEITES APENAS NA CATEGORIA ÓLEOS */
+const galeriaAzeites = document.getElementById("galeria-azeites");
+
+if (galeriaAzeites) {
+    galeriaAzeites.hidden = categoria !== "oleos";
+}
+
+
 
         /* =====================================================
    FOTOS DA CATEGORIA - DEFINIDAS NO HTML
@@ -829,37 +915,108 @@ const imagensCategoria =
         ? templateImagens.content.querySelectorAll("img")
         : [];
 
+const galeriaDinamica =
+    document.getElementById(
+        "dynamic-product-gallery"
+    );
 
-for (
-    let i = 1;
-    i <= 4;
-    i++
-) {
+    /* SABONETES - DUAS COLUNAS INDEPENDENTES */
 
-    const imagem =
-        document.getElementById(
-            "detail-image-" + i
-        );
+if (galeriaDinamica && categoria === "cuidados") {
+    galeriaDinamica.innerHTML = "";
 
-    const imagemCategoria =
-        imagensCategoria[i - 1];
+    const esquerda = document.createElement("div");
+    const direita = document.createElement("div");
 
+    esquerda.className = "sabonetes-coluna";
+    direita.className = "sabonetes-coluna";
 
-    if (
-        imagem &&
-        imagemCategoria
-    ) {
+    imagensCategoria.forEach((foto, index) => {
+        const img = document.createElement("img");
 
-        imagem.src =
-            imagemCategoria.getAttribute("src");
+        img.src = foto.getAttribute("src");
+        img.alt = foto.getAttribute("alt") || "Sabonete";
+        img.className = "sabonetes-foto";
 
-        imagem.alt =
-            imagemCategoria.getAttribute("alt")
-            ||
-            `${dados.titulo} - foto ${i}`;
+        // Rosa Mosqueta e Sete Ervas à esquerda
+        if (index === 0 || index === 3) {
+            esquerda.appendChild(img);
+        } else {
+            // Camomila e Enxofre à direita
+            direita.appendChild(img);
+        }
+    });
+
+    galeriaDinamica.append(esquerda, direita);
+}
+
+   /* =====================================================
+   GALERIAS DAS CATEGORIAS
+===================================================== */
+
+if (galeriaDinamica && categoria !== "cuidados") {
+
+    galeriaDinamica.innerHTML = "";
+
+    galeriaDinamica.style.display =
+        categoria === "suplementos" ? "none" : "";
+
+    // Granolas: duas colunas independentes
+    if (categoria === "granolas") {
+
+        const colunaEsquerda = document.createElement("div");
+        const colunaDireita = document.createElement("div");
+
+        colunaEsquerda.className = "granolas-coluna";
+        colunaDireita.className = "granolas-coluna";
+
+        imagensCategoria.forEach((foto, index) => {
+
+            const imagem = document.createElement("img");
+
+            imagem.src = foto.getAttribute("src");
+            imagem.alt = foto.getAttribute("alt") || "Granola";
+            imagem.className = "granolas-foto";
+
+            if (index < 2) {
+                colunaEsquerda.appendChild(imagem);
+            } else {
+                colunaDireita.appendChild(imagem);
+            }
+
+        });
+
+        galeriaDinamica.appendChild(colunaEsquerda);
+        galeriaDinamica.appendChild(colunaDireita);
+
+    } else {
+
+        // Todas as demais categorias, incluindo Sabonetes
+        imagensCategoria.forEach((foto, index) => {
+
+            const blocoImagem = document.createElement("div");
+            blocoImagem.className = "product-detail-image";
+
+            if (categoria === "bebidas") {
+                blocoImagem.classList.add("xaropes-item");
+
+                if (index === 6) {
+                    blocoImagem.classList.add("xaropes-banner");
+                }
+            }
+
+            const imagem = document.createElement("img");
+
+            imagem.src = foto.getAttribute("src");
+            imagem.alt = foto.getAttribute("alt") ||
+                `${dados.titulo} - foto ${index + 1}`;
+
+            blocoImagem.appendChild(imagem);
+            galeriaDinamica.appendChild(blocoImagem);
+
+        });
 
     }
-
 }
 
 
