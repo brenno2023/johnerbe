@@ -10177,8 +10177,8 @@ h2 span {
 
 #detalhe-produto.categoria-mel
 #dynamic-product-gallery .product-detail-image:last-child {
-    grid-column: 3 !important;
-    grid-row: 4 !important;
+    grid-column: auto !important;
+grid-row: auto !important;
 }
 
 @media (max-width: 900px) {
@@ -10193,8 +10193,8 @@ h2 span {
 
 #detalhe-produto.categoria-mel
 #dynamic-product-gallery .product-detail-image:last-child {
-    grid-column: 3 !important;
-    grid-row: 4 !important;
+    grid-column: auto !important;
+grid-row: auto !important;
     width: 100% !important;
     max-width: none !important;
     justify-self: stretch !important;
@@ -11654,4 +11654,17 @@ h2 span {
     object-fit: cover !important;
     object-position: center !important;
     display: block !important;
+}
+
+/* MEL E PRÓPOLIS - GALERIA OCUPANDO TODA A LARGURA */
+
+#detalhe-produto.categoria-mel .product-detail-gallery {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+#detalhe-produto.categoria-mel #dynamic-product-gallery {
+    width: 100% !important;
+    max-width: none !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
 }
